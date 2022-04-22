@@ -8704,6 +8704,34 @@ function __ncc_wildcard$0 (arg) {
   else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(6404);
   else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(4147);
 }
+function __ncc_wildcard$1 (arg) {
+  if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(1626);
+  else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(2939);
+  else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(3266);
+  else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(5425);
+  else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(7368);
+  else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(2298);
+  else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(6601);
+  else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(2162);
+  else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(2332);
+  else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(522);
+  else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(2555);
+  else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(4367);
+  else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(3348);
+  else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(5745);
+  else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(459);
+  else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(8390);
+  else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(2576);
+  else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(3031);
+  else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(4093);
+  else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(129);
+  else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(4813);
+  else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(4226);
+  else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(908);
+  else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(581);
+  else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(6404);
+  else if (arg === "C:/Users/Quentin/Desktop/release-check-package-version-action/") return __nccwpck_require__(4147);
+}
 const core = __nccwpck_require__(2186);
 const { context } = __nccwpck_require__(5438);
 
@@ -8711,7 +8739,9 @@ async function run() {
   const { title } = context.payload.pull_request;
   const pull_request_version = title.split("/")[1];
   console.log("package.json path : " + process.env.GITHUB_WORKSPACE + "/package.json");
-  const {version} = __ncc_wildcard$0(process.env.GITHUB_WORKSPACE)
+  console.log(__ncc_wildcard$0(process.env.GITHUB_WORKSPACE))
+  const version = __ncc_wildcard$1(process.env.GITHUB_WORKSPACE).version
+  console.log("version : " + version);
   if(pull_request_version !== version){
     core.setFailed("The version of the pull request is not the same as the version of the package.json");
     core.setFailed("The version of the pull request is: " + pull_request_version);
