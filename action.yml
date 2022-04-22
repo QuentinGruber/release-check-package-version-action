@@ -1,0 +1,9 @@
+name: 'release-check-package-version-action'
+description: 'Create release when a PR is merged on the master/main branch'
+inputs:
+  repo-token:
+    description: 'repo-token'
+    required: true
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
