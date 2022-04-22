@@ -8477,13 +8477,9 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
 const core = __nccwpck_require__(2186);
-const { getOctokit, context } = __nccwpck_require__(5438);
-const fs = __nccwpck_require__(7147);
+const { context } = __nccwpck_require__(5438);
 
 async function run() {
-  const repo_token = core.getInput("repo-token");
-  const github = getOctokit(repo_token);
-  // Get informations from the context of the action
   const { title } = context.payload.pull_request;
   const pull_request_version = title.split(" ")[1];
   const {version} = __nccwpck_require__(3245)
