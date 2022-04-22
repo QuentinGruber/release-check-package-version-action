@@ -8477,7 +8477,7 @@ async function run() {
   const pull_request_version = title.split("/")[1];
   let dir = process.env.GITHUB_WORKSPACE; 
   const packagePath = path.join(dir, "package.json");
-  console.log(packagePath)
+  console.log("Load package version from " + packagePath)
   const version = require(packagePath).version
   if(pull_request_version !== version){
     core.setFailed("The version of the pull request is not the same as the version of the package.json");
