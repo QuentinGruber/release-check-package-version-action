@@ -8481,7 +8481,7 @@ const { context } = __nccwpck_require__(5438);
 
 async function run() {
   const { title } = context.payload.pull_request;
-  const pull_request_version = title.split(" ")[1];
+  const pull_request_version = title.split("/")[1];
   const {version} = __nccwpck_require__(4147)
   if(pull_request_version !== version){
     core.setFailed("The version of the pull request is not the same as the version of the package.json");
