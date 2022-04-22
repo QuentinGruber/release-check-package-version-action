@@ -7,6 +7,8 @@ async function run() {
   const {version} = require("./package.json")
   if(pull_request_version !== version){
     core.setFailed("The version of the pull request is not the same as the version of the package.json");
+    core.setFailed("The version of the pull request is: " + pull_request_version);
+    core.setFailed("The version of the package.json is: " + version);
   }
 }
 
