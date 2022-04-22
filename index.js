@@ -1,5 +1,6 @@
 const core = require("@actions/core");
 const { context } = require("@actions/github");
+const path = require("path");
 
 async function run() {
   const { title } = context.payload.pull_request;

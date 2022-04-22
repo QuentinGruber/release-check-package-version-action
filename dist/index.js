@@ -8470,6 +8470,7 @@ var __webpack_exports__ = {};
 (() => {
 const core = __nccwpck_require__(2186);
 const { context } = __nccwpck_require__(5438);
+const path = __nccwpck_require__(1017);
 
 async function run() {
   const { title } = context.payload.pull_request;
