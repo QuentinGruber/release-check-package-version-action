@@ -5,6 +5,10 @@ const path = require("path");
 async function run() {
   if (context.payload.pull_request) {
     const { title } = context.payload.pull_request;
+    if(!title.toLowerCase().includes("release")) {
+      console.log("Not a release PR");
+      return;
+    }
     const pull_request_version = title.split("/")[1];
     let dir = process.env.GITHUB_WORKSPACE;
     const packagePath = path.join(dir, "package.json");
